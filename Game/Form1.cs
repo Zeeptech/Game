@@ -8,20 +8,30 @@ namespace Game
         public Form1()
         {
             InitializeComponent();
-            grassTile = new Tile("../../../assets/unknown.png", 100, 100);
         }
 
-
+        /// <summary>
+        /// Hijacked WinForms method which will paint stuff on the screen.
+        /// For the purposes of this game, we are only using this method to set the order in which our layers should render.
+        /// For example, the background layer should be rendered at the top of the method, and the foreground should be rendered at the bottom.
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            //Image character = Image.FromFile("../../../assets/unknown.png");
-
-
             Graphics g = e.Graphics;
 
-            g.DrawImage(grassTile.Img, 100, 100);
+            //Set render order here...
+            Render.Tiles.ForEach(tile =>
+            {
+                g.DrawImage(tile.Img, tile.X, tile.Y);
+            });
+        }
 
+        //Call this when you wish to redraw the screen
+        public void Redraw()
+        {
+            Invalidate();
         }
 
         private void Form1_Load(object sender, EventArgs e)
