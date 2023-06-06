@@ -23,16 +23,33 @@ namespace Game
             //Set render order here...
 
             //Draw map
-            /*
-            Map.Tiles.ForEach(tile =>
+            Map office = Maps.Get(0);
+
+            int tileSize = office.Tiles[0].Width;
+            int numCols = 14;  // Number of tiles in each row
+            int numRows = (int)Math.Ceiling((double)office.Tiles.Count / numCols);
+            int row = 0;
+
+            for (int i = 0; i < office.Tiles.Count; i++)
             {
-                g.DrawImage(tile.Img, tile.X, tile.Y);
-            });
-            */
+                int col = i % numCols;
+                int x = tileSize * col;
+                int y = tileSize * row;
+
+                g.DrawImage(office.Tiles[i].Img, x, y);
+
+                if (col == numCols - 1)
+                {
+                    // Move to the next row
+                    row++;
+                }
+            }
+
+
 
             //Draw player
             g.DrawImage(Player.Img, Player.X, Player.Y);
-
+            
         }
 
         //Call this when you wish to redraw the screen
@@ -44,6 +61,7 @@ namespace Game
         private void Form1_Load(object sender, EventArgs e)
         {
             Task.Run(Start);
+
         }
 
 
