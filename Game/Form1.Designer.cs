@@ -45,11 +45,11 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(774, 740);
+            ClientSize = new Size(870, 836);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Margin = new Padding(4, 5, 4, 5);
-            MaximumSize = new Size(800, 800);
+            MaximumSize = new Size(896, 896);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;

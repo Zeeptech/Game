@@ -3,8 +3,6 @@ namespace Game
     public partial class Form1 : Form
     {
 
-        Tile grassTile;
-
         public Form1()
         {
             InitializeComponent();
@@ -25,10 +23,12 @@ namespace Game
             //Set render order here...
 
             //Draw map
+            /*
             Map.Tiles.ForEach(tile =>
             {
                 g.DrawImage(tile.Img, tile.X, tile.Y);
             });
+            */
 
             //Draw player
             g.DrawImage(Player.Img, Player.X, Player.Y);
@@ -51,7 +51,7 @@ namespace Game
         {
             while (true)
             {
-                
+
                 if (Player.MoveRight)
                 {
                     Player.X += Player.Speed;
@@ -78,31 +78,31 @@ namespace Game
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
 
-            
+
             switch (e.KeyCode)
             {
                 case Keys.W:
                     Player.MoveUp = true;
                     break;
 
-                case Keys.S: 
+                case Keys.S:
                     Player.MoveDown = true;
                     break;
 
-                case Keys.A: 
+                case Keys.A:
                     Player.MoveLeft = true;
                     break;
-                case Keys.D: 
+                case Keys.D:
                     Player.MoveRight = true;
                     break;
-               
+
             }
         }
 
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
-            
+
             switch (e.KeyCode)
             {
                 case Keys.W:

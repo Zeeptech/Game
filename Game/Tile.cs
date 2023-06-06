@@ -11,23 +11,15 @@ namespace Game
         public Image Img
         { get; set; }
 
-        public int X
-        { get; set; }
-
-        public int Y
-        { get; set; }
-
         public int Width
         { get; set; }
 
         public int Height
         { get; set; }
 
-        public Tile(string img, int x, int y)
+        public Tile(string img)
         {
-            this.Img = Image.FromFile(img);
-            this.X = x;
-            this.Y = y;
+            this.Img = Utils.GetImage(img);
             this.Width = 64;
             this.Height = 64;
         }

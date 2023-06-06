@@ -9,5 +9,13 @@ Turn based
 	Last boss is Either Mathilda, Johan dennelind or Joel Danielsson
 	GoyJoy is small HP pot
 	Rockstar is big HP pot
+	JOEL IS A ROAMING LAST BOSS That searches the player
+	If Joel sees the player he will begin a chase
+	If Joel gets to the player The last BossFight will begin
+	If the player Encounters joel too early in the game, he will not have the power to defeat him
+
+	When the player has gotten the 4 secret abillities to defeat Joel he can safely start the encounter by letting Joel get to him
+	With the hidden abillities he will attack joel WHERE IT HURTS (So. Hur gåre med dina loggor i paint? etc...)
+	The player will escape Telia by getting fired for killing Joel in cold blood (As he just wanted to be your friend) Winning the game.
 </1st Idea>
 
