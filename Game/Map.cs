@@ -9,11 +9,9 @@ namespace Game
     /// <summary>
     /// Collection of graphics to render.
     /// </summary>
-    internal static class Render
+    internal static class Map
     {
-        private static string assetsPath = "../../../assets/";
-
         public static List<Tile> Tiles = new List<Tile>();
-
     }
+
 }
