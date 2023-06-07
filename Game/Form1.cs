@@ -2,6 +2,7 @@ namespace Game
 {
     public partial class Form1 : Form
     {
+        public Graphics g;
 
         public Form1()
         {
@@ -18,38 +19,42 @@ namespace Game
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            Graphics g = e.Graphics;
+            g = e.Graphics;
+
 
             //Set render order here...
 
             //Draw map
-            Map office = Maps.Get(0);
+            PaintMap(0);
 
-            int tileSize = office.Tiles[0].Width;
-            int numCols = 14;  // Number of tiles in each row
-            int numRows = (int)Math.Ceiling((double)office.Tiles.Count / numCols);
+
+            //Draw player
+            g.DrawImage(Player.Img, Player.X, Player.Y);
+        }
+
+        public void PaintMap(int index)
+        {
+
+            Map map = Maps.Get(index);
+
+
+            int tileSize = map.Tiles[0].Width;
+            int numCols = 14;
             int row = 0;
 
-            for (int i = 0; i < office.Tiles.Count; i++)
+            for (int i = 0; i < map.Tiles.Count; i++)
             {
                 int col = i % numCols;
                 int x = tileSize * col;
                 int y = tileSize * row;
 
-                g.DrawImage(office.Tiles[i].Img, x, y);
+                g.DrawImage(map.Tiles[i].Img, x, y);
 
                 if (col == numCols - 1)
                 {
-                    // Move to the next row
                     row++;
                 }
             }
-
-
-
-            //Draw player
-            g.DrawImage(Player.Img, Player.X, Player.Y);
-            
         }
 
         //Call this when you wish to redraw the screen

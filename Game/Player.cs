@@ -11,7 +11,7 @@ namespace Game
         public static Image Img { get; set; } = Utils.GetImage("unknown.png");
         public static string Name { get; set; } = "Hero";
         public static int Hp { get; set; } = 100;
-        public static int Speed { get; set; } = 4;
+        public static int Speed { get; set; } = 5;
         public static bool IsDead { get; set; } = false;
         public static int X { get; set; } = 400 - 32;
         public static int Y { get; set; } = 400 - 32;

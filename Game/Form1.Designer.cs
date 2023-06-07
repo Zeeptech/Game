@@ -34,22 +34,22 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(685, 9);
+            label1.Location = new Point(480, 5);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(59, 25);
+            label1.Size = new Size(38, 15);
             label1.TabIndex = 0;
             label1.Text = "label1";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(870, 836);
+            ClientSize = new Size(896, 897);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
-            Margin = new Padding(4, 5, 4, 5);
-            MaximumSize = new Size(896, 896);
+            MaximumSize = new Size(916, 940);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;

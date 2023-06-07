@@ -14,7 +14,8 @@ namespace Game
     {
         private Tile[] options =
         {
-            new Tile("TileMat.jpg"),
+            new Tile("floor.jpg"),
+            new Tile("wall.jpg")
         };
 
         public List<Tile> Tiles { get; set; } = new List<Tile>();
@@ -24,7 +25,7 @@ namespace Game
         {
             for (int i = 0; i < grid.Length; i++)
             {
-                this.Tiles.Add(options[grid[0]]);
+                this.Tiles.Add(options[grid[i]]);
             }
             this.Name = name;
         }
