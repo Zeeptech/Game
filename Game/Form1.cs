@@ -3,7 +3,8 @@ namespace Game
     public partial class Form1 : Form
     {
         public Graphics g;
-
+        public int MapWidth = 896;
+        public int MapHeight = 896;
         public Form1()
         {
             InitializeComponent();
@@ -75,22 +76,25 @@ namespace Game
             while (true)
             {
 
-                if (Player.MoveRight)
+
+                if (Player.MoveRight && Player.X <= MapWidth - 33)
                 {
                     Player.X += Player.Speed;
                 }
-                if (Player.MoveLeft)
+
+                if (Player.MoveLeft && Player.X >= 0)
                 {
                     Player.X -= Player.Speed;
                 }
-                if (Player.MoveUp)
+                if (Player.MoveUp && Player.Y >= 0 )
                 {
                     Player.Y -= Player.Speed;
                 }
-                if (Player.MoveDown)
+                if (Player.MoveDown && Player.Y <= MapHeight - 35)
                 {
                     Player.Y += Player.Speed;
                 }
+
 
                 Redraw();
                 Thread.Sleep(16);
